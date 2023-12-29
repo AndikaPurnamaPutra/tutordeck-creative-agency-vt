@@ -1,0 +1,174 @@
+.section-work {
+  padding-block: 150px;
+
+  @include responsive(lg) {
+    padding-block: 64px;
+  }
+
+  .container {
+    &-work {
+      flex-direction: column;
+      gap: 62px;
+
+      @include responsive(sm) {
+        gap: 32px;
+      }
+
+      .content {
+        &-top {
+          @include flex(row, center, space-between);
+
+          @include responsive(lg) {
+            @include flex(column, flex-start, space-between);
+            gap: 16px;
+          }
+
+          .subtext {
+            &-text {
+              @include flex(column, flex-start, null);
+
+              &:nth-child(1) {
+                gap: 8px;
+              }
+
+              &:nth-child(2) {
+                gap: 32px;
+
+                @include responsive(lg) {
+                  gap: 24px;
+                }
+              }
+
+              &-display {
+                max-width: 514px;
+              }
+
+              &-desc {
+                max-width: 570px;
+
+                @include responsive(xl) {
+                  max-width: 470px;
+                }
+              }
+            }
+          }
+        }
+
+        &-bottom {
+          @include flex(row, center, space-between);
+
+          @include responsive(sm) {
+            @include flex(column, center, space-between);
+          }
+
+          .card {
+            position: relative;
+            margin: 10px;
+            border-radius: 40px;
+            overflow: hidden;
+            transition: all 400ms ease;
+            cursor: pointer;
+
+            &:hover {
+              .card-title {
+                transform: scale(1);
+                opacity: 1;
+              }
+
+              .card-text {
+                bottom: 0;
+              }
+            }
+
+            &-title {
+              color: #FFF;
+              font-family: $font-desc;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 120%;
+              /* 21.6px */
+              letter-spacing: 0.18px;
+              text-transform: uppercase;
+
+              padding: 12px 24px;
+              border-radius: 40px;
+              background: #111;
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              opacity: 0;
+              transform: scale(0);
+              transition: all 400ms ease;
+
+              @include responsive(xl) {
+                padding: 8px 18px;
+              }
+            }
+
+            &-text {
+              background-color: #111;
+              padding: 30px;
+              width: 100%;
+              position: absolute;
+              bottom: -100%;
+              transition: all 400ms ease;
+
+              @include responsive(xl) {
+                padding: 26px;
+              }
+
+              .text {
+                @include flex(row, center, null);
+                gap: 24px;
+
+                &-title {
+                  color: #FFF;
+                  font-family: $font-desc;
+                  font-size: 32px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 120%;
+                  /* 38.4px */
+                  letter-spacing: -0.32px;
+                  text-transform: capitalize;
+
+                  @include responsive(xl) {
+                    font-size: 24px;
+                  }
+                }
+
+                img {
+                  max-width: 32px;
+
+                  @include responsive(xl) {
+                    max-width: 22px;
+                  }
+                }
+              }
+
+              .btn {
+                position: absolute;
+                top: -39px;
+                right: 40px;
+
+                @include responsive(xl) {
+                  top: -32px;
+                  right: 30px;
+                }
+
+                img {
+                  max-width: 77px;
+
+                  @include responsive(xl) {
+                    max-width: 54px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

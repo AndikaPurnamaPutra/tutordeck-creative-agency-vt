@@ -1,0 +1,237 @@
+.section-about {
+  padding-block: 150px;
+
+  @include responsive(lg) {
+    padding-block: 64px;
+  }
+
+  .container {
+    &-about {
+      flex-direction: column;
+      align-items: center;
+      padding-inline: 80px;
+      gap: 150px;
+
+      @include responsive(xl) {
+        gap: 100px;
+      }
+
+      @include responsive(lg) {
+        gap: 64px;
+      }
+
+      @include responsive(sm) {
+        gap: 32px;
+      }
+
+      .content {
+        &-top {
+          @include flex(row, center, space-between);
+          width: 1170px;
+
+          @include responsive(xl) {
+            width: 100%;
+          }
+
+          @include responsive(lg) {
+            @include flex(column, flex-start, space-between);
+            gap: 32px;
+          }
+
+          &-left {
+            @include flex(column, flex-start, null);
+            gap: 54px;
+
+            @include responsive(lg) {
+              gap: 32px;
+            }
+
+            @include responsive(sm) {
+              gap: 24px;
+            }
+
+            .subtext {
+              &-text {
+                @include flex(column, null, null);
+                gap: 16px;
+
+                &-display {
+                  max-width: 530px;
+
+                  @include responsive(lg) {
+                    max-width: 100%;
+                  }
+                }
+
+                &-desc {
+                  max-width: 571px;
+
+                  @include responsive(xl) {
+                    max-width: 471px;
+                  }
+
+                  @include responsive(lg) {
+                    max-width: 100%;
+                  }
+                }
+              }
+            }
+          }
+
+          &-right {
+            @include flex(column, null, null);
+            gap: 24px;
+
+            .item {
+              @include flex(column, null, null);
+              gap: 24px;
+
+              @include responsive(sm) {
+                gap: 20px;
+              }
+
+              &:nth-child(1)::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: #111;
+                opacity: 0.2;
+              }
+
+              &-profile {
+                @include flex(row, center, null);
+                gap: 16px;
+
+                img {
+                  max-width: 64px;
+                }
+
+                &-text {
+                  .text {
+                    &-title {
+                      color: #212223;
+                      font-family: $font-display;
+                      font-size: 24px;
+                      font-style: normal;
+                      font-weight: 700;
+                      line-height: 120%;
+                      /* 28.8px */
+                      text-transform: capitalize;
+                    }
+
+                    &-subtitle {
+                      color: #212223;
+                      font-family: $font-display;
+                      font-size: 18px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 160%;
+                      /* 28.8px */
+                      letter-spacing: 0.18px;
+                    }
+                  }
+                }
+              }
+
+              &-desc {
+                max-width: 470px;
+
+                @include responsive(lg) {
+                  max-width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &-bottom {
+          @include flex(column, center, center);
+          gap: 45px;
+
+          @include responsive(sm) {
+            gap: 24px;
+          }
+
+          .subtext {
+            &-wrap {
+              @include flex(row, center, space-between);
+              width: 1100px;
+              flex-wrap: wrap;
+
+              @include responsive(xl) {
+                width: 100%;
+                @include flex(row, center, space-around);
+                gap: 32px;
+              }
+
+              @include responsive(sm) {
+                gap: 16px;
+              }
+
+              .item {
+                text-align: center;
+
+                &-title {
+                  color: #212223;
+                  font-family: $font-desc;
+                  font-size: 100px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 120%;
+                  /* 120px */
+                  letter-spacing: -4px;
+
+                  @include responsive(xl) {
+                    font-size: 78px;
+                    letter-spacing: -2px;
+                  }
+
+                  @include responsive(lg) {
+                    font-size: 62px;
+                    letter-spacing: 0;
+                  }
+
+                  @include responsive(sm) {
+                    font-size: 54px;
+                  }
+
+                  sup {
+                    img {
+                      max-width: 42px;
+
+                      @include responsive(xl) {
+                        max-width: 32px;
+                      }
+
+                      @include responsive(lg) {
+                        max-width: 24px;
+                      }
+                    }
+                  }
+                }
+
+                &-subtitle {
+                  color: #212223;
+                  font-family: $font-desc;
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 130%;
+                  /* 26px */
+
+                  @include responsive(xl) {
+                    font-size: 18px;
+                  }
+
+                  @include responsive(lg) {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

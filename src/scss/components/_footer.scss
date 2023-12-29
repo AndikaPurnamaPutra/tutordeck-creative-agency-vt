@@ -1,0 +1,137 @@
+.footer {
+  background-color: #000;
+  padding-block: 100px;
+
+  @include responsive(lg) {
+    padding-block: 50px;
+  }
+
+  .container {
+    &-footer {
+      flex-direction: column;
+      gap: 100px;
+
+      @include responsive(lg) {
+        gap: 50px
+      }
+
+      .content {
+        &-top {
+          .subtext {
+            &-text {
+              @include flex(column, null, null);
+              gap: 72px;
+
+              @include responsive(lg) {
+                gap: 36px;
+              }
+
+              .wrap {
+                @include flex(column, center, center);
+                gap: 8px;
+              }
+
+              .subtitle {
+                color: $white;
+              }
+
+              &-display {
+                text-align: center;
+                color: $white;
+                max-width: 967px;
+              }
+
+              &-email {
+                @include flex(row, center, space-between);
+                padding-block: 25px;
+                background-color: $primary;
+                border-radius: 40px;
+
+                @include responsive(sm) {
+                  padding-block: 16px;
+                }
+
+                img {
+                  max-width: 32px;
+
+                  @include responsive(xl) {
+                    max-width: 24px;
+                  }
+
+                  @include responsive(sm) {
+                    max-width: 14px;
+                  }
+                }
+
+                span {
+                  color: #FFF;
+                  text-align: center;
+                  font-family: $font-display;
+                  font-size: 24px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 120%;
+                  /* 28.8px */
+
+                  @include responsive(xl) {
+                    font-size: 20px;
+                  }
+
+                  @include responsive(sm) {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-bottom {
+          border-top: 1px solid rgba($color: #fff, $alpha: 0.3);
+          padding-top: 40px;
+          @include flex(row, center, space-between);
+
+          @include responsive(sm) {
+            @include flex(column, flex-start);
+            gap: 24px;
+          }
+
+          .subtext {
+            &-logo {
+              display: inline-flex;
+
+              img {
+                max-width: 157px;
+              }
+            }
+
+            &-text {
+              @include flex(row, center, space-between);
+              gap: 40px;
+
+              @include responsive(sm) {
+                @include flex(column, flex-start, space-between);
+                gap: 24px;
+              }
+
+              .nav-link {
+                color: $white;
+              }
+            }
+
+            &-copyright {
+              color: #FFF;
+              text-align: right;
+              font-family: $font-desc;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 120%;
+              /* 24px */
+            }
+          }
+        }
+      }
+    }
+  }
+}

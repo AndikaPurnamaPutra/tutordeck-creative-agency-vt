@@ -1,0 +1,109 @@
+.navbar {
+  background-color: #FBFBFB;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  .container {
+    &-nav {
+      @include flex(row, center, space-between);
+      padding-block: 15px;
+      position: relative;
+
+      .nav {
+        &-logo {
+          display: inline-flex;
+        }
+
+        &-menu {
+          @include responsive(lg) {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            @include flex(column, flex-start, null);
+            gap: 32px;
+            background-color: #FBFBFB;
+            padding-inline: 20px;
+            height: 0;
+            transition: all 300ms ease;
+            overflow: hidden;
+
+            &.active {
+              padding-block: 60px;
+              height: 100vh;
+
+              .nav-menu-items,
+              .wrap-btn {
+                opacity: 1;
+              }
+            }
+          }
+
+
+          &-items {
+            @include flex(row, center, null);
+
+            @include responsive(lg) {
+              @include flex(column, flex-start, null);
+              gap: 32px;
+              opacity: 0;
+              transition: all 300ms ease;
+            }
+
+            gap: 40px;
+          }
+
+          .wrap-btn {
+            opacity: 0;
+            width: 100%;
+            transition: all 300ms ease;
+          }
+        }
+
+        &-btn-responsive {
+          display: none;
+          background-image: url("../../../assets/image/menu-black.svg");
+          background-repeat: no-repeat;
+          background-size: 24px 24px;
+          background-position: right;
+          width: 32px;
+          height: 32px;
+          border: transparent;
+          background-color: transparent;
+
+          @include responsive(lg) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include responsive(lg) {
+    display: inline-flex;
+  }
+}
+
+.desktop {
+  @include responsive(lg) {
+    display: none;
+  }
+}
+
+.scrolled {
+  background-color: #fff !important;
+  transition: all 300ms ease;
+}
+
+.cross {
+  background-image: url("../../../assets/image/cross-black.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  width: 24px;
+  height: 24px;
+}

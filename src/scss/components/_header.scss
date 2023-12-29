@@ -1,0 +1,248 @@
+.section-header {
+  background-color: $light-white;
+  padding-top: 64px;
+
+  .container {
+    &-header {
+      @include flex(column, null, null);
+      gap: 64px;
+
+      .content {
+        &-top {
+          @include flex(column, null, null);
+          gap: 64px;
+
+          @include responsive(lg) {
+            gap: 32px;
+          }
+
+          .subtext {
+            &-text {
+              &-display {
+                position: relative;
+                max-width: 1170px;
+              }
+
+              .ic-pattern {
+                max-width: 100px;
+                position: absolute;
+                top: 0;
+                right: 79px;
+
+                @include responsive(xl) {
+                  max-width: 64px;
+                  right: 158px;
+                }
+
+                @include responsive(lg) {
+                  max-width: 48px;
+                  right: 96px;
+                }
+
+                @include responsive(sm) {
+                  display: none;
+                }
+              }
+
+              &:nth-child(2) {
+                @include flex(row, center, null);
+                gap: 99px;
+
+                @include responsive(xl) {
+                  gap: 40px;
+                }
+
+                @include responsive(lg) {
+                  @include flex(column, flex-start, null);
+                  gap: 20px;
+                }
+              }
+
+              .profile {
+                @include flex(row, center, null);
+                gap: 10px;
+
+                .wrap {
+                  @include flex(row, center, null);
+                  flex-shrink: 0;
+
+                  img {
+                    max-width: 70px;
+
+                    @include responsive(xl) {
+                      max-width: 60px;
+                    }
+
+                    @include responsive(sm) {
+                      max-width: 44px;
+                    }
+
+                    &:last-child {
+                      margin-left: -40px;
+
+                      @include responsive(sm) {
+                        margin-left: -30px;
+                      }
+                    }
+                  }
+                }
+
+                &-text {
+                  color: #111;
+                  font-family: $font-desc;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 130%;
+                  /* 23.4px */
+                  text-transform: capitalize;
+
+                  max-width: 143px;
+
+                  @include responsive(xl) {
+                    font-size: 16px;
+                  }
+
+                  @include responsive(lg) {
+                    max-width: 124px;
+                  }
+                }
+              }
+
+              &-desc {
+                max-width: 660px;
+
+                @include responsive(xl) {
+                  max-width: 552px;
+                }
+
+                @include responsive(lg) {
+                  max-width: 500px;
+                }
+              }
+            }
+          }
+        }
+
+        &-bottom {
+          position: relative;
+          margin-bottom: -47px;
+
+          @include responsive(lg) {
+            margin-bottom: -24px;
+          }
+
+          @include responsive(sm) {
+            margin-bottom: -12px;
+          }
+
+          .subtext {
+            &-card {
+              border-radius: 32px;
+              background: #FFF;
+              padding: 35px;
+              position: absolute;
+              top: -40px;
+              left: 35px;
+              z-index: 1;
+
+              @include responsive(lg) {
+                padding: 24px;
+              }
+
+              @include responsive(sm) {
+                position: relative;
+                left: 0;
+              }
+
+              .card {
+                &-title {
+                  color: #212223;
+                  font-family: $font-desc;
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 140%;
+                  /* 28px */
+                  text-transform: capitalize;
+
+                  @include responsive(xl) {
+                    font-size: 18px;
+                  }
+
+                  span {
+                    font-weight: 400;
+                  }
+                }
+
+                &-desc {
+                  color: #212223;
+                  font-family: $font-display;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 150%;
+                  /* 24px */
+                  letter-spacing: 0.16px;
+                  text-transform: capitalize;
+
+                  max-width: 200px;
+
+                  @include responsive(sm) {
+                    max-width: 100%;
+                  }
+                }
+              }
+            }
+
+            &-image {
+              position: relative;
+
+              .btn {
+                position: absolute;
+                top: -46px;
+                right: 76px;
+                animation: rotate-animation 10s infinite linear;
+
+                @include responsive(sm) {
+                  top: -26px;
+                  right: 36px;
+                }
+
+                img {
+                  max-width: 170px;
+
+                  @include responsive(xl) {
+                    max-width: 132px;
+                  }
+
+                  @include responsive(lg) {
+                    max-width: 110px;
+                  }
+
+                  @include responsive(sm) {
+                    max-width: 54px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

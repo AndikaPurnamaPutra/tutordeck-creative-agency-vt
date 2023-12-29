@@ -1,0 +1,52 @@
+.section-banner {
+  background-color: #000;
+  padding-block: 40px;
+
+  @include responsive(xl) {
+    padding-block: 30px;
+  }
+
+  @include responsive(sm) {
+    padding-block: 24px;
+  }
+  .slider-wrapper {
+    .slick-track {
+      @include flex(row, center, null);
+      gap: 32px;
+    }
+    .slider {
+      @include flex(row, center, null);
+      gap: 32px;
+      .slide {
+        @include flex(row, center, null);
+        gap: 32px;
+        flex-shrink: 0;
+        img {
+          max-width: 42px;
+        }
+
+        &-text {
+          color: #FFF;
+          font-family: $font-desc;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%;
+          /* 57.6px */
+          letter-spacing: -1.44px;
+          text-transform: uppercase;
+          flex-shrink: 0;
+
+          @include responsive(xl) {
+            font-size: 32px;
+          }
+
+          @include responsive(sm) {
+            font-size: 24px;
+            letter-spacing: -0.44px;
+          }
+        }
+      }
+    }
+  }
+}
